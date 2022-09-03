@@ -1,3 +1,11 @@
 :root{
   --primary-clr: #1d9bf0;
+  --light-dark: #181818;
+  --primary-dark: #031018;
+}
+
+main{
+  width: min(1250px, 100%);
+  margin: 0 auto;
+  min-height: 100vh;
 }

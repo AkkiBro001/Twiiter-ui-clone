@@ -1,0 +1,187 @@
+.navigation-container{
+    height: 100vh;
+    position: relative;
+    padding: 0 1em;
+}
+
+.navigation-container__menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75em 0;
+    gap: 0.5em;
+}
+
+.navigation-container__menuItem__link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0.55em 0.65em;
+    border-radius: 9999px;
+    outline: none;
+    
+}
+
+.navigation-container__menuItem__link:hover, 
+.navigation-container__menuItem__link:focus,
+.navigation-container__userContainer.userProfile:hover,
+.navigation-container__userContainer.userProfile:focus{
+    background-color: var(--light-dark);
+}
+
+
+.navigation-container__menuItem__icon{
+    font-size: 1.7rem;
+    transform: translateY(2px);
+    margin-right: 1em;
+}
+
+.navigation-container__menuItem__link.logo{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation-container__menuItem__link.logo .navigation-container__menuItem__icon{
+    margin-right: 0 !important;
+    transform: translateY(4px);
+    font-size: 2.5rem;
+    padding: 0;
+}
+
+
+.navigation-container__menuItem__link.logo:hover, .navigation-container__menuItem__link.logo:focus{
+    background-color: var(--primary-dark);
+}
+
+.navigation-container__menu__btn{
+    margin-top: 0.75em;
+}
+
+.navigation-container__menu__btn:hover, .navigation-container__menu__btn:focus{
+    opacity: 0.80;
+}
+
+.navigation-container__userContainer.userProfile{
+    display: flex;
+    position: absolute;
+    bottom: 2em;
+    padding: 0.55em 0.65em;
+    border-radius: 9999px;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    gap: 0.65em;
+    align-items: center;
+    
+}
+
+.navigation-container__userContainer__userDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation-container__userContainer__userIcon{
+   font-size: 2rem;
+   line-height: 0;
+   width: 40px;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   background: #ccd6dd;
+   color: var(--primary-dark);
+   overflow: hidden;
+
+}
+
+.navigation-container__userContainer__more{
+    font-size: 1.7rem;
+    margin-left: 0.25em;
+}
+
+.navigation-container__userContainer__userIcon svg{
+    transform-origin: bottom;
+    transform: translateY(8px) scale(1.3);
+}
+
+.navigation-container__userContainer__userName{
+    font-weight: 500;
+}
+
+.navigation-container__userContainer__userID{
+    color: #808080;
+}
+
+.navigation-container__menu__btn{
+    padding: 1em 6em;
+    font-weight: bold;
+    background: var(--primary-clr);
+    color: #fff;
+    border-radius: 9999px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.navigation-container__menu__btn .featherIcon{
+    font-size: 1.5rem;
+}
+
+@media screen and (max-height:760px) {
+    .navigation-container .nav-Bookmarks, .navigation-container .nav-Lists{
+        display: none;
+    }
+
+    .navigation-container__userContainer.userProfile{
+        position: static;
+        margin-top: 1em;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .navigation-container__menuItem__text, 
+    .navigation-container__userContainer__userDetails,
+    .navigation-container__userContainer__more{
+        display: none;
+    }
+
+    .navigation-container__menuItem__icon {
+        margin-right: 0;
+    }
+
+    .navigation-container__menu__btn{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        position: relative;
+        
+    }
+
+    .navigation-container__menu__btn .featherIcon{
+        position: relative;
+        
+    }
+
+    .navigation-container__menu__btn::before{
+        position: absolute;
+        content: '+';
+        font-weight: normal;
+        font-size: 1.2rem;
+        
+        top: 20%;
+        left: 20%;
+        color: #fff;
+        z-index: 1000;
+    }
+}

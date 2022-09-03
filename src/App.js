@@ -2,7 +2,11 @@ import './App.css';
 import Navigation from './Components/Navigation/Navigation';
 
 function App() {
-  return <Navigation/>
+  return (
+    <main>
+      <Navigation/>
+    </main>
+  )
 }
 
 export default App;

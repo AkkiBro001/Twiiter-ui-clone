@@ -1,6 +1,7 @@
 import React from 'react'
 import NavigationMenu from './NavigationMenu'
-import Button from '../Button/Button';
+import Button from './Button';
+import './Navigation.css';
 
 import {AiOutlineTwitter, AiOutlineHome, AiOutlineMail} from 'react-icons/ai';
 import {BiHash} from 'react-icons/bi'
@@ -15,17 +16,17 @@ const Navigation = () => {
   return (
     <div className='navigation-container'>
         <ul className="navigation-container__menu">
-            <NavigationMenu icon={<AiOutlineTwitter/>} text={""}/>
-            <NavigationMenu icon={<AiOutlineHome/>} text={"Home"}/>
-            <NavigationMenu icon={<BiHash/>} text={"Explore"}/>
-            <NavigationMenu icon={<MdNotifications/>} text={"Notifications"}/>
-            <NavigationMenu icon={<AiOutlineMail/>} text={"Messages"}/>
-            <NavigationMenu icon={<BsBookmarks/>} text={"Bookmarks"}/>
-            <NavigationMenu icon={<RiFileList2Line/>} text={"Lists"}/>
-            <NavigationMenu icon={<HiOutlineUser/>} text={"Profile"}/>
-            <NavigationMenu icon={<CgMoreO/>} text={"More"}/>
+            <NavigationMenu icon={<AiOutlineTwitter/>} text={""} clsName={"logo"}/>
+            <NavigationMenu icon={<AiOutlineHome/>} text={"Home"} clsName={"Home"}/>
+            <NavigationMenu icon={<BiHash/>} text={"Explore"} clsName={"Explore"}/>
+            <NavigationMenu icon={<MdNotifications/>} text={"Notifications"} clsName={"Notifications"}/>
+            <NavigationMenu icon={<AiOutlineMail/>} text={"Messages"} clsName={"Messages"}/>
+            <NavigationMenu icon={<BsBookmarks/>} text={"Bookmarks"} clsName={"Bookmarks"}/>
+            <NavigationMenu icon={<RiFileList2Line/>} text={"Lists"} clsName={"Lists"}/>
+            <NavigationMenu icon={<HiOutlineUser/>} text={"Profile"} clsName={"Profile"}/>
+            <NavigationMenu icon={<CgMoreO/>} text={"More"} clsName={"More"}/>
             <Button/>
-            <UserNav icon={<HiUser/>} userName={'Akshay Tambe'} userID={'@AkshayTambe007T'}/>
+            <UserNav icon={<HiUser/>} userName={'Akshay Tambe'} userID={'@AkshayTambe007T'} clsName="userProfile"/>
         </ul>
     </div>
   )
