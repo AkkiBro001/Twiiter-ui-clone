@@ -1,15 +1,66 @@
-import {MdMoreHoriz} from 'react-icons/md'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {MdMoreHoriz, MdCheck} from 'react-icons/md';
+
 const UserNav = ({icon, userName, userID, clsName}) => {
-  return (
-    <a href='/' className={`navigation-container__userContainer ${clsName}`}>
+  
+  const [openModal, setModal] = useState(false)
+  
+  const modelElement = useRef()
+  const userProfile = useRef()
+
+  function handleModal(e){
+    
+    setModal(preVal => !preVal)
+  }
+
+  function handleMouse(e){
+      e.preventDefault()
+      if(openModal && !e.target.closest('.navigation-container__modal')){
+        setModal(false)
+      }
+  }
+  
+ useEffect(()=>{
+    window.addEventListener('mouseup', handleMouse, {capture: true})
+    return ()=>{window.removeEventListener('mouseup', handleMouse)}
+ },[openModal])
+  
+
+  function UserProfile({clsName, moreIcon}){
+return (
+      <a href='#' className={`navigation-container__userContainer ${clsName} ${!openModal ? 'navlink--hover' : null} `} ref={userProfile}>
         <div className="navigation-container__userContainer__userIcon">{icon}</div>
         <div className="navigation-container__userContainer__userDetails">
             <span className="navigation-container__userContainer__userName">{userName}</span>
             <span className="navigation-container__userContainer__userID">{userID}</span>
         </div>
-        <div className="navigation-container__userContainer__more"><MdMoreHoriz/></div>
+        <div className="navigation-container__userContainer__more">{moreIcon}</div>
     </a>
+    )
+  }
+
+  return (
+    <section className='navigation-container__userMain'>
+    {openModal && <div className="navigation-container__modal" ref={modelElement}>
+      <header>
+        <UserProfile clsName='userHeader' moreIcon={<MdCheck style={{color:'var(--primary-clr)'}}/>}/>
+      </header>
+      <ul className='navigation-container__modal__list'>
+          <li className='navigation-container__modal__listItem'>
+          <a href = "#" className="navigation-container__modal__listLink">Add an existing account</a>
+          </li>
+          <li className='navigation-container__modal__listItem'>
+          <a href = "#" className="navigation-container__modal__listLink">Log out {userID}</a>
+          </li>
+      </ul>
+    </div>}
+      <section className='navigation-container__profile' onClick={handleModal}>
+        <UserProfile clsName={clsName} moreIcon={<MdMoreHoriz/>}/>
+      </section>
+    
+    </section>
   )
+  
 }
 
 export default UserNav

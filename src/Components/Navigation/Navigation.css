@@ -25,11 +25,12 @@
     
 }
 
-.navigation-container__menuItem__link:hover, 
-.navigation-container__menuItem__link:focus,
-.navigation-container__userContainer.userProfile:hover,
-.navigation-container__userContainer.userProfile:focus{
+.navigation-container__menuItem__link.navlink--hover:hover, 
+.navigation-container__menuItem__link.navlink--hover:focus,
+.navigation-container__userContainer.userProfile.navlink--hover:hover,
+.navigation-container__userContainer.userProfile.navlink--hover:focus{
     background-color: var(--light-dark);
+    cursor: pointer;
 }
 
 
@@ -67,10 +68,17 @@
     opacity: 0.80;
 }
 
-.navigation-container__userContainer.userProfile{
-    display: flex;
+.navigation-container__menu__btn .featherIcon{
+    font-size: 1.5rem;
+}
+
+.navigation-container__userMain{
     position: absolute;
     bottom: 2em;
+}
+
+.navigation-container__userContainer{
+    display: flex;
     padding: 0.55em 0.65em;
     border-radius: 9999px;
     color: #fff;
@@ -78,6 +86,7 @@
     outline: none;
     gap: 0.65em;
     align-items: center;
+    cursor: default;
     
 }
 
@@ -104,6 +113,12 @@
 .navigation-container__userContainer__more{
     font-size: 1.7rem;
     margin-left: 0.25em;
+    line-height: 0;
+}
+
+.navigation-container__userContainer > div{
+    
+    transform: translateY(1px);
 }
 
 .navigation-container__userContainer__userIcon svg{
@@ -131,26 +146,86 @@
     outline: none;
 }
 
-.navigation-container__menu__btn .featherIcon{
-    font-size: 1.5rem;
+.navigation-container__modal{
+    position: absolute;
+    background-color: #000;
+    z-index: 1000;
+    top: -15px;
+    transform: translateY(-100%);
+    /* overflow: hidden; */
+    border-radius: 20px;
+    padding-bottom: 20px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
 }
+
+.navigation-container__modal::before{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #000;
+    bottom: 0;
+    transform: rotate(-45deg) translate(-50%, 0);
+    left: 50%;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
+}
+
+.navigation-container__modal::after{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 35px;
+    height: 20px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+}
+
+.navigation-container__modal .userHeader{
+    border-radius: 0;
+    padding: 1.5em 1em 1em;
+    border-bottom: 1px solid #151515;
+}
+
+.navigation-container__modal__list{
+    list-style: none;
+}
+
+.navigation-container__modal__listLink{
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation-container__modal__listLink:hover{
+    background: var(--light-dark);
+}
+
+
 
 @media screen and (max-height:760px) {
     .navigation-container .nav-Bookmarks, .navigation-container .nav-Lists{
         display: none;
     }
 
-    .navigation-container__userContainer.userProfile{
-        position: static;
-        margin-top: 1em;
+    .navigation-container__userMain{
+        position: relative;
+        margin-top: 2.5em;
     }
 }
 
 @media screen and (max-width:1100px) {
     .navigation-container__menuItem__text, 
-    .navigation-container__userContainer__userDetails,
-    .navigation-container__userContainer__more{
-        display: none;
+    .navigation-container__userContainer.userProfile .navigation-container__userContainer__userDetails,
+    .navigation-container__userContainer.userProfile .navigation-container__userContainer__more{
+        display: none !important;
     }
 
     .navigation-container__menuItem__icon {
@@ -182,6 +257,16 @@
         top: 20%;
         left: 20%;
         color: #fff;
-        z-index: 1000;
+        z-index: 1;
+    }
+
+    .navigation-container__modal::before{
+        left: 28px;
+    }
+
+    .navigation-container__modal::after{
+        left: 15px;
+        transform: translateX(0);
+        border-radius: 15px;
     }
 }

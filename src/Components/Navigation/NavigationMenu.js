@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+
 
 const NavigationMenu = ({icon, text, clsName}) => {
+  
+  
+  
+
   return (
     <li className={`navigation-container__menuItem nav-${clsName}`}>
-    <a href="/" className={`navigation-container__menuItem__link ${clsName}`}>
+    <a href="#" className={`navigation-container__menuItem__link ${clsName} navlink--hover`} >
         <span className="navigation-container__menuItem__icon">{icon}</span>
         {text && <span className='navigation-container__menuItem__text'>{text}</span>}
      </a>   
