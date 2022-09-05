@@ -14,8 +14,8 @@ const UserNav = ({icon, userName, userID, clsName}) => {
   }
 
   function handleMouse(e){
-      e.preventDefault()
-      if(openModal && !e.target.closest('.navigation-container__modal')){
+      if(!openModal) return window.removeEventListener('mouseup', handleMouse)
+      if(!e.target.closest('.navigation-container__modal')){
         setModal(false)
       }
   }
@@ -41,7 +41,7 @@ return (
 
   return (
     <section className='navigation-container__userMain'>
-    {openModal && <div className="navigation-container__modal" ref={modelElement}>
+    {openModal && <div className="navigation-container__modal modal-box-shadow" ref={modelElement}>
       <header>
         <UserProfile clsName='userHeader' moreIcon={<MdCheck style={{color:'var(--primary-clr)'}}/>}/>
       </header>

@@ -155,9 +155,7 @@
     /* overflow: hidden; */
     border-radius: 20px;
     padding-bottom: 20px;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
-    box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.45);
+    
 }
 
 .navigation-container__modal::before{

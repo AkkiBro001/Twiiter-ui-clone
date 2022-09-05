@@ -1,12 +1,12 @@
 import React from 'react'
 import NavigationMenu from './NavigationMenu'
 import Button from './Button';
-import './Navigation.css';
+import './__Navigation.css';
 
-import {AiOutlineTwitter, AiOutlineHome, AiOutlineMail} from 'react-icons/ai';
+import {AiOutlineTwitter, AiOutlineMail} from 'react-icons/ai';
 import {BiHash} from 'react-icons/bi'
 import {MdNotifications} from 'react-icons/md'
-import {RiFileList2Line} from 'react-icons/ri'
+import {RiFileList2Line, RiHome7Fill} from 'react-icons/ri'
 import {BsBookmarks} from 'react-icons/bs'
 import {HiOutlineUser, HiUser} from 'react-icons/hi'
 import {CgMoreO} from 'react-icons/cg'
@@ -17,7 +17,7 @@ const Navigation = () => {
     <div className='navigation-container'>
         <ul className="navigation-container__menu">
             <NavigationMenu icon={<AiOutlineTwitter/>} text={""} clsName={"logo"}/>
-            <NavigationMenu icon={<AiOutlineHome/>} text={"Home"} clsName={"Home"}/>
+            <NavigationMenu icon={<RiHome7Fill/>} text={"Home"} clsName={"Home"}/>
             <NavigationMenu icon={<BiHash/>} text={"Explore"} clsName={"Explore"}/>
             <NavigationMenu icon={<MdNotifications/>} text={"Notifications"} clsName={"Notifications"}/>
             <NavigationMenu icon={<AiOutlineMail/>} text={"Messages"} clsName={"Messages"}/>
