@@ -1,7 +1,8 @@
 :root{
   --primary-clr: #1d9bf0;
-  --light-dark: #181818;
+  --light-dark: #1d1f23;
   --primary-dark: #031018;
+  --card-clr: #17181c;
 }
 
 .modal-box-shadow{

@@ -2,6 +2,9 @@
     padding: 0 1em;
     position: relative;
     width: min(400px, 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     
 }
 
@@ -17,6 +20,8 @@
     width: 100%;
     left: 0;
     top: 0;
+    background: #000;
+    z-index: 5000;
 }
 
 .search-twitter-container__input-container{
@@ -78,3 +83,161 @@
     gap: 0.5em;
     
 }
+
+/*====================================*/
+/*      WhatHappning-container         */
+/*====================================*/
+.WhatHappning-container, .WhoToFollow-container{
+    background: var(--card-clr);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.WhatHappning-container header, .WhoToFollow-container header{
+    padding: 1em;
+    letter-spacing: 1px;
+}
+
+.WhatHappning-container__topList,.WhoToFollow-container__followList{
+    list-style: none;
+}
+
+.WhatHappning-container__topItemLink ,.WhoToFollow-container__followLink{
+    display: flex;
+    width: 100%;
+    padding: 1em;
+    text-decoration: none;
+    color: #fff;
+    gap:0.5em;
+}
+
+.WhatHappning-container__container__topItemLink{
+    align-items: flex-start;
+}
+
+.WhatHappning-container__topItemLink:hover, .WhoToFollow-container__followLink:hover{
+    background-color: var(--light-dark);
+    
+}
+
+
+
+.WhatHappning-container__thumb{
+   width: 70px;
+   height: 70px;
+   flex-shrink: 0;
+   overflow: hidden;
+   border-radius: 15px;
+}
+
+.WhatHappning-container__thumb img{
+    height: 100%;
+    object-fit: cover;
+    object-position: -20px;
+}
+
+
+.WhatHappning-container__title{
+    margin: 0.5rem 0;
+    font-weight:500;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    
+}
+
+.WhatHappning-container .grayText{
+    color: gray;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.WhatHappning-container .trandingLink{
+    color: var(--primary-clr);
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-right: 0.5em;
+}
+
+.WhatHappning-container .trandingLink:hover{
+    text-decoration: underline;
+}
+
+
+
+/*====================================*/
+/*      WhoToFollow-container         */
+/*====================================*/
+
+
+.WhoToFollow-container__profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: gray;
+}
+
+.WhoToFollow-container__profile img{
+    width: 100%;
+}
+
+.WhoToFollow-container__profileName{
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.WhoToFollow-container__profileName .verified{
+    line-height: 0;
+}
+
+.WhoToFollow-container__profileName:hover{
+    text-decoration: underline;
+}
+
+.WhoToFollow-container__profileUserID{
+    color: gray;
+    font-size: 0.95rem;
+    margin-top: 1.5px;
+}
+
+.WhoToFollow-container__followBtn{
+    align-self: center;
+    margin-left: auto;
+    padding: 0.75em 1.5em;
+    border-radius: 9999px;
+    border: none;
+    font-weight: bold;
+    color: var(--light-dark);
+    cursor: pointer;
+}
+
+
+/*====================================*/
+/*      Footer-container              */
+/*====================================*/
+.Footer-container{
+    padding: 0 15px;
+    font-size: 0.85rem;
+    color: gray;
+}
+
+.Footer-container__links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.Footer-container__links a{
+    text-decoration: none;
+    color: gray;
+    opacity: 0.75;
+}
+
+.Footer-container__links a:hover{
+    text-decoration: underline;
+}   
