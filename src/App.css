@@ -18,4 +18,13 @@ main{
   display: flex;
   justify-content: space-between;
   position: relative;
+  
+  
+}
+
+
+@media screen and (max-width:900px) {
+  main{
+    width: min(680px, 100%);
+  }
 }

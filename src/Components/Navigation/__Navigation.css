@@ -1,7 +1,8 @@
 .navigation-container{
     height: 100vh;
-    position: relative;
+    position: fixed;
     padding: 0 1em;
+
 }
 
 .navigation-container__menu{
@@ -149,7 +150,7 @@
 .navigation-container__modal{
     position: absolute;
     background-color: #000;
-    z-index: 1000;
+    z-index: 5000;
     top: -15px;
     transform: translateY(-100%);
     /* overflow: hidden; */
