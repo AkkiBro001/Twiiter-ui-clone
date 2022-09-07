@@ -5,7 +5,7 @@ import './__Navigation.css';
 
 import {AiOutlineTwitter, AiOutlineMail} from 'react-icons/ai';
 import {BiHash} from 'react-icons/bi'
-import {MdNotifications} from 'react-icons/md'
+import {IoNotificationsOutline} from 'react-icons/io5'
 import {RiFileList2Line, RiHome7Fill} from 'react-icons/ri'
 import {BsBookmarks} from 'react-icons/bs'
 import {HiOutlineUser, HiUser} from 'react-icons/hi'
@@ -19,7 +19,7 @@ const Navigation = () => {
             <NavigationMenu icon={<AiOutlineTwitter/>} text={""} clsName={"logo"}/>
             <NavigationMenu icon={<RiHome7Fill/>} text={"Home"} clsName={"Home"}/>
             <NavigationMenu icon={<BiHash/>} text={"Explore"} clsName={"Explore"}/>
-            <NavigationMenu icon={<MdNotifications/>} text={"Notifications"} clsName={"Notifications"}/>
+            <NavigationMenu icon={<IoNotificationsOutline/>} text={"Notifications"} clsName={"Notifications"}/>
             <NavigationMenu icon={<AiOutlineMail/>} text={"Messages"} clsName={"Messages"}/>
             <NavigationMenu icon={<BsBookmarks/>} text={"Bookmarks"} clsName={"Bookmarks"}/>
             <NavigationMenu icon={<RiFileList2Line/>} text={"Lists"} clsName={"Lists"}/>
