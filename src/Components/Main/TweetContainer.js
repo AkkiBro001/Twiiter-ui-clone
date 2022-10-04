@@ -31,7 +31,7 @@ const TweetContainer = () => {
             <div className="tweet-container__title">
                 <span className="title">ICC</span>
                 <span className="userID">@ICC · 1h</span>
-                <span className='icon' onClick={()=>setToggleMore(true)}>
+                <span className={`icon ${toggleMore ? '' : 'hoverModal'}`} onClick={()=>setToggleMore(true)}>
                     {toggleMore && <TweetMoreOption isToggle={toggleMore}/>}
                     <MdOutlineMoreHoriz/>
                 </span>

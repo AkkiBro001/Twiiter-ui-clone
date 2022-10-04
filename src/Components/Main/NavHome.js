@@ -19,11 +19,11 @@ const NavHome = () => {
   return (
     <div className="NavHome">
         <a href="#" className="NavHome__link">
-            <h3>Home</h3>
+            <h3>Latest Tweets</h3>
         </a>
 
 
-        <span className="NavHome__right" onClick={()=>setModal(true)}>
+        <span className={`NavHome__right ${openModal ? '' : 'hoverModal'}`} onClick={()=>setModal(true)}>
           {openModal && <NavHomeModal/>}
           <NavHomeIcon/>
         </span>
