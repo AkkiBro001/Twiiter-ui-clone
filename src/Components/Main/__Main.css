@@ -137,7 +137,7 @@
     padding-bottom:0.75em;
     margin-bottom: 0.75em;
     align-self: center;
-    
+    position: relative;
 }
 
 .post__section__audience, .post__section__reply{
@@ -156,8 +156,17 @@
     
 }
 
+.post__section__audience.greenTheme{
+    border: 1px solid rgba(0,186,124,0.5);
+    color: var(--green-clr);
+}
+
 .post__section__audience:hover, .post__section__reply:hover{
     background: var(--primary-dark);
+}
+
+.post__section__audience.greenTheme:hover{
+    background-color: rgba(0,186,124,0.10) !important;
 }
 
 .post__section__input{
@@ -216,6 +225,72 @@
     background-color: var(--primary-clr);
     opacity: 0.5;
 }
+
+.Post__Modal{
+    
+    position: absolute;
+    background: #000;
+    top: 35px;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    color: #fff;
+}
+
+.Post__Modal header{
+    padding: 1.5em;
+}
+
+.Post__Modal .subtitle{
+    color: gray;
+    font-weight: 100;
+}
+
+.Post__Modal__Section .icons{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 1em;
+    
+}
+
+.Post__Modal__Section .checkIcon{
+    margin-left: auto;
+}
+
+.Post__Modal__Section{
+    list-style: none;
+}
+
+.Post__Modal__Section li label{
+    display: flex;
+    align-items: center;
+    padding: 1em 1.5em;
+}
+
+.Post__Modal__Section li label:hover{
+    background-color: var(--light-dark);
+}
+
+.Post__Modal__Section input[type="radio"]{
+    display: none;
+}
+
+.Post__Modal__Section .icons svg{
+    width: 100%;
+    height: 100%;
+    line-height: 0;
+}
+
+
 
 
 /*====================================*/
