@@ -221,11 +221,11 @@
 .post__section__tweet__btn{
     border: none;
     outline: none;
-    padding: 0.5em 1.15em;
-    font-size: 1rem;
+    padding: 0.5em 1.25em;
+    font-size: 0.9rem;
     font-weight: bold;
     color: #fff;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.25px;
     border-radius: 999px;
     background-color: var(--primary-clr);
     opacity: 0.5;

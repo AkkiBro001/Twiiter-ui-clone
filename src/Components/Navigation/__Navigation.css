@@ -66,9 +66,7 @@
     margin-top: 0.75em;
 }
 
-.navigation-container__menu__btn:hover, .navigation-container__menu__btn:focus{
-    opacity: 0.80;
-}
+
 
 .navigation-container__menu__btn .featherIcon{
     font-size: 1.5rem;
