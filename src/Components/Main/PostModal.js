@@ -2,7 +2,11 @@ import React, { useState } from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import {BiWorld} from 'react-icons/bi';
 import { UserWithHeart } from '../Icons/Icons';
-const PostModal = ({ header, items, headerSub, handleToggle}) => {
+// import {BiUserCheck} from 'react-icons/bi';
+import { PeopleFollow } from '../Icons/Icons';
+import {MdOutlineAlternateEmail} from 'react-icons/md';
+
+const PostModal = ({ header, items, headerSub, handleToggle, type}) => {
 
     
 
@@ -12,7 +16,7 @@ const PostModal = ({ header, items, headerSub, handleToggle}) => {
             <header>
                 <h3>{header}</h3>
                 {
-                    headerSub && <p className='subtitle'>Choose who can reply to this Tweet. Anyone mentioned can always reply.</p>
+                    headerSub && <p className='subtitle' style={{marginTop: '0.25em'}}>Choose who can reply to this Tweet. Anyone mentioned can always reply.</p>
                 }
             </header>
             <ul className='Post__Modal__Section'>
@@ -21,10 +25,10 @@ const PostModal = ({ header, items, headerSub, handleToggle}) => {
                         const {itemName, itemSub, itemIconColor, isChecked} = item;
                         return (
                             <li key={i}>
-                                <input type="radio" name="postModal" value={itemName} id={itemName} onChange={(e)=>handleToggle(e.target.value)}/>
+                                <input type="radio" name={`postModal_${type}`} value={itemName} id={itemName} onChange={(e)=>handleToggle(e.target.value, type)}/>
                                 <label htmlFor={itemName} className={itemName.replace(/(\s\s|\s)/g, "")}>
                                     <span className='icons' style={{ backgroundColor: itemIconColor }}>{
-                                        itemName === "Everyone" ? <BiWorld/> : itemName === "Twitter Circle" ? <UserWithHeart/> : <BiWorld/>
+                                        itemName === "Everyone" ? <BiWorld/> : itemName === "Twitter Circle" ? <UserWithHeart/> : itemName === "People you follow" ? <PeopleFollow/> : <MdOutlineAlternateEmail/>
                                     }</span>
                                     <span><p>{itemName}</p>
                                         {itemSub && <p style={{ marginTop: '0.35em' }}>

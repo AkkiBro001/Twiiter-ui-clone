@@ -8,6 +8,9 @@ import {BsEmojiSmile} from 'react-icons/bs'
 import {Schedule} from "../Icons/Icons"; 
 import {HiOutlineLocationMarker} from 'react-icons/hi';
 import PostModal from './PostModal';
+// import {BiUserCheck} from 'react-icons/bi';
+import { PeopleFollow } from '../Icons/Icons';
+import {MdOutlineAlternateEmail} from 'react-icons/md';
 
 
 
@@ -17,48 +20,52 @@ const PostSection = () => {
   const [post, setPost] = useState("")
   const [audience, setAudience] = useState("Everyone")
   const [openAudienceModal, setOpenAudienceModal] = useState(false)
-  const audienceSetion = useRef()
+  const [reply, setReply] = useState("Everyone")
+  const [openReplyModal, setOpenReplyModal] = useState(false)
+  const audienceSection = useRef()
+  const replySection = useRef()
 
-  function handleToggle(value){
-    setAudience(value)
+  function handleToggle(value, type){
+    if(openAudienceModal && type === 'audience'){
+
+      setAudience(value)
+    }else{
+      setReply(value)
+    }
+  }
+  
+  if(audienceSection.current && replySection.current){
+    audienceSection.current.onblur = function(){
+      setOpenAudienceModal(false)
+    }
+  
+    replySection.current.onblur = function(){
+      setOpenReplyModal(false)
+    }
   }
   
 
-  function handleModal(e){
-    
-    
-    let targetElem = ""
-    let mainList = ""
-    if(openAudienceModal){
-      targetElem = '.post__section__audience'
-      mainList = `.${audience.replace(/(\s\s|\s)/g, "")}`
-      if(!e.target.closest(targetElem) || e.target.closest(mainList)){
-        setOpenAudienceModal(false)
-      }
-      
-    }else{
-
-    }
-    //e.target.closest(targetElem)
-    
-  }
-
   useEffect(()=>{
-    if(!audienceSetion) return
+    
+  
+
     if(openAudienceModal){
      
       setOpenAudienceModal(false)
-    window.addEventListener('mouseup', handleModal)
-    return ()=> window.removeEventListener('mouseup', handleModal)
+    
+    }else if(openReplyModal){
+      setOpenReplyModal(false)
     }
-  }, [audience])
+
+    
+  }, [audience, reply])
 
   return (
     <>
     <div className='post__section' style={{borderBottom: `${showOption ? "1px solid var(--light-dark)": ""}`}}>
       {showOption && <div className={`post__section__audience ${audience !== "Everyone" ? "greenTheme" : ""}`} tabIndex='0'
-        onClick={()=>setOpenAudienceModal(true)}
-        ref={audienceSetion}
+        onClick={()=>{setOpenAudienceModal(true); setOpenReplyModal(false)}}
+        ref={audienceSection}
       >
         <span>{audience}</span>
         <span><MdKeyboardArrowDown/></span>
@@ -70,6 +77,7 @@ const PostSection = () => {
         } 
         headerSub={false}
         handleToggle = {handleToggle}
+        type="audience"
         />}
       </div>}
       <input type="text" className="post__section__input" placeholder="What's happening?"
@@ -77,23 +85,36 @@ const PostSection = () => {
         onChange={(e)=>setPost(e.target.value)}
         value={post}
       />
-      {showOption && <div className="post__section__reply" tabIndex='0'>
-        <span><IoEarth/></span>
-        <span>Everyone can reply</span>
-        
+      {showOption && <div className="post__section__reply" tabIndex='0' 
+      onClick={()=>{setOpenReplyModal(true); setOpenAudienceModal(false)}}
+      ref={replySection}
+      >
+        <span>{reply === "Everyone" ? <IoEarth/> : reply === "People you follow" ? <PeopleFollow fill="#1d9bf0"/> : <MdOutlineAlternateEmail/>}</span>
+        <span>{reply} can reply</span>
+        {openReplyModal && <PostModal header="Who can reply?" items={
+          [
+            {itemName:"Everyone", itemSub:false, itemIconColor: '#1d9bf0', isChecked: reply === "Everyone"},
+            {itemName:"People you follow", itemSub:false, itemIconColor: '#1d9bf0', isChecked: reply === "People you follow"},
+            {itemName:"Only people you mention", itemSub:false, itemIconColor: '#1d9bf0', isChecked: reply === "Only people you mention"},
+          ]
+        } 
+        headerSub={true}
+        handleToggle = {handleToggle}
+        type="reply"
+        />}
       </div>}
     </div>
     <div className='post__section__tweet'>
         <div className='post__section__tweet__icons'>
-          <span><AiOutlinePicture/></span>
-          <span><RiFileGifLine/></span>
-          <span><BiPoll/></span>
-          <span><BsEmojiSmile/></span>
-          <span><Schedule/></span>
-          <span><HiOutlineLocationMarker/></span>
+          <span tabIndex="0"><AiOutlinePicture/></span>
+          <span tabIndex="0"><RiFileGifLine/></span>
+          <span tabIndex="0"><BiPoll/></span>
+          <span tabIndex="0"><BsEmojiSmile/></span>
+          <span tabIndex="0"><Schedule/></span>
+          <span tabIndex="0"><HiOutlineLocationMarker/></span>
         </div>
         <button className= {`post__section__tweet__btn ${post ? 'activePost' : ""}`}
-        
+        tabIndex= {`${post ? '0' : '-1'}`}
         >
             Tweet
         </button>
