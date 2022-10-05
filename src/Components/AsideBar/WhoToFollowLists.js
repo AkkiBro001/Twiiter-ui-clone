@@ -1,20 +1,41 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {BsPatchCheckFill} from 'react-icons/bs';
+import TwitterData from '../Data/TwitterData';
+
+
+
+
 
 const WhoToFollowLists = () => {
+    const [data, setData] = useState([]);
+    useEffect(()=>{
+        let filterArr = []
+        setData(TwitterData.filter(data => {
+            if(!filterArr.includes(data.tweetAccountUserID)){
+
+                filterArr.push(data.tweetAccountUserID)
+                return data;
+            }
+        }))
+      },[])
+      
     return (
-        <li className="WhoToFollow-container__followItem">
+        data.map(result => {
+            const {id, tweetAccountName, tweetAccountUserID, tweetProfileImageURL, isVerified} = result
+            return <li className="WhoToFollow-container__followItem" key={id}>
             <a href="#" className="WhoToFollow-container__followLink">
                 <div className="WhoToFollow-container__profile">
-                    <img src="https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/profile_user.jpg" alt="img" />
+                    <img src={tweetProfileImageURL} alt="img" />
                 </div>
                 <div className="WhoToFollow-container__profileDetails">
-                    <span className="WhoToFollow-container__profileName">TypeScript <span className="verified">{<BsPatchCheckFill/>}</span></span>
-                    <p className="WhoToFollow-container__profileUserID">@typescript</p>
+                    <span className="WhoToFollow-container__profileName">{tweetAccountName} <span className="verified">{isVerified && <BsPatchCheckFill/>}</span></span>
+                    <p className="WhoToFollow-container__profileUserID">{tweetAccountUserID}</p>
                 </div>
                 <button className="WhoToFollow-container__followBtn">Follow</button>
             </a>
         </li>
+        })
+        
     )
 }
 

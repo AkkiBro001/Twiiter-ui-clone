@@ -4,21 +4,19 @@ import {MdOutlineMoreHoriz} from 'react-icons/md'
 import {FiShare} from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 import { Verified } from '../Icons/Icons';
-import TwitterData from '../Data/TwitterData';
 
 
-const TweetContainer = () => {
+
+const TweetContainer = (props) => {
    
    const [toggleMore, setToggleMore] = useState(false)
-   const [data, setData] = useState([]);
+   
    useEffect(()=>{
       window.addEventListener('mouseup', toggleMoreFn)
       return ()=> {window.removeEventListener('mouseup', toggleMoreFn)}
     },[toggleMore])
     
-    useEffect(()=>{
-      setData(TwitterData)
-    },[])
+    
 
    
    function toggleMoreFn(e){
@@ -29,10 +27,10 @@ const TweetContainer = () => {
         }
    }
 
+   const {id, tweetAccountName, tweetAccountUserID, tweetCreated, tweetDetails, tweetImageURL, tweetProfileImageURL, tweetComment, tweetRetweet, tweetLike, isVerified} = props.data;
 return (
-data.map(result => {
-    const {id, tweetAccountName, tweetAccountUserID, tweetCreated, tweetDetails, tweetImageURL, tweetProfileImageURL, tweetComment, tweetRetweet, tweetLike, isVerified} = result
-    return <div className="tweet-container" key={id}>
+
+    <div className="tweet-container">
     <div className="tweet-container__profile">
         <img src={tweetProfileImageURL} alt="profile" />
     </div>
@@ -71,7 +69,7 @@ data.map(result => {
         </div>
     </div>
 </div>
-})
+
 
     
     

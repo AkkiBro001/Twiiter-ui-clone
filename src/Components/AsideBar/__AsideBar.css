@@ -176,6 +176,7 @@
     border-radius: 50%;
     overflow: hidden;
     background-color: gray;
+    flex-shrink: 0;
 }
 
 .WhoToFollow-container__profile img{
@@ -189,6 +190,7 @@
     display: flex;
     align-items: center;
     gap: 0.25em;
+    font-size: 0.90rem;
 }
 
 .WhoToFollow-container__profileName .verified{
@@ -208,7 +210,7 @@
 .WhoToFollow-container__followBtn{
     align-self: center;
     margin-left: auto;
-    padding: 0.75em 1.5em;
+    padding: 0.75em 1.25em;
     border-radius: 9999px;
     border: none;
     font-weight: bold;
