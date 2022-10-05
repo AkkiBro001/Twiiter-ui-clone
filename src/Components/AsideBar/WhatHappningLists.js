@@ -1,27 +1,23 @@
-import React, { useId } from 'react'
 
+const WhatHappningLists = (props) => {
 
-const WhatHappningLists = ({subtitle, title, img, link}) => {
-
-    const id = useId()
+    const {tweetAccountUserID, tweetCreated, tweetDetails, tweetImageURL} = props.data;
 
     return (
         <li className="WhatHappning-container__topItem">
             <a href="#" className="WhatHappning-container__topItemLink">
                 <div className="WhatHappning-container__details">
-                <p className="WhatHappning-container__subtitle grayText">{subtitle}</p>
-                <p className="WhatHappning-container__title">{title}</p>
-                <p className="WhatHappning-container__tranding">
+                <p className="WhatHappning-container__subtitle grayText">{tweetAccountUserID} . {tweetCreated}</p>
+                <p className="WhatHappning-container__title">{
+                    tweetDetails.slice(0,60)
+                    }{tweetDetails.length > 60 ? '...' : ""}</p>
                 
-                   
-                {link && <span className='grayText'>Trending with </span>}
-                {link && link.map((link, i) => <span className="trandingLink" key={id+i}>{link}</span>)}
-                
-                </p>
                 </div>
-                <div className="WhatHappning-container__thumb">
-                    <img src={img} alt="img"/>
+                {
+                    tweetImageURL && <div className="WhatHappning-container__thumb">
+                    <img src={tweetImageURL} alt="img"/>
                 </div>
+                }
             </a>
         </li>
     )

@@ -1,33 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import WhatHappningLists from './WhatHappningLists'
-import Liz from '../../img/Liz-Truss.webp';
-import Cyrus from '../../img/Cyrus-Mistry.webp';
-import War from '../../img/Ukrain-War.jpg';
+import TwitterData from "../Data/TwitterData"
+const LIST_LENGTH = 3;
+const SKIP_LIST = [10]
 
 const WhatHappning = () => {
+  const [data, setData] = useState([])
+
+  useEffect(()=>{
+    setData(()=>{
+      
+     
+      const randomData = []
+      for(let i=0;i<LIST_LENGTH; i++){
+        const randomIndex = Math.floor(Math.random() * TwitterData.length)
+        console.log(randomIndex, !SKIP_LIST.includes(randomIndex))
+        if(!SKIP_LIST.includes(TwitterData[randomIndex].id)){
+          randomData.push(TwitterData[randomIndex])
+        }else{
+          i--;
+        }
+      }
+
+      return [...new Set(randomData)]
+    })
+  },[])
+
+  console.log(data)
+
   return (
     <div className="WhatHappning-container">
         <header>
             <h3>What's happening</h3>
         </header>
         <ul className="WhatHappning-container__topList">
-            <WhatHappningLists img={Cyrus} 
-            title="Businessman Cyrus Mistry dies in a car accident near Mumbai"
-            subtitle="India national news · Yesterday"
-            link={["#CyrusMistryDeath"]}
-            />
+            {
+              data.map(result => <WhatHappningLists data={result} key={result.id}/>)
+              
+            }
 
-            <WhatHappningLists img={Liz} 
-            title="Liz Truss wins Conservative Party leadership election and will be the next UK prime minister"
-            subtitle="2022 Conservative Party leadership election . LIVE"
-            link={["#RishiSunak", "#PrimeMinister"]}
-            />
-
-            <WhatHappningLists img={War} 
-            title="Latest updates on the war in Ukraine"
-            subtitle="War in Ukraine · LIVE"
-            
-            />
+        
             
             
             <li><a href="#" className="WhatHappning-container__topItemLink" style={{color:'var(--primary-clr)'}}>Show More</a></li>

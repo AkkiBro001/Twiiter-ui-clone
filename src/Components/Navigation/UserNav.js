@@ -1,7 +1,7 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {MdMoreHoriz, MdCheck} from 'react-icons/md';
 
-const UserNav = ({icon, userName, userID, clsName}) => {
+const UserNav = ({userName, userID, clsName}) => {
   
   const [openModal, setModal] = useState(false)
   
@@ -29,7 +29,7 @@ const UserNav = ({icon, userName, userID, clsName}) => {
   function UserProfile({clsName, moreIcon}){
 return (
       <a href='#' className={`navigation-container__userContainer ${clsName} ${!openModal ? 'navlink--hover' : null} `} ref={userProfile}>
-        <div className="navigation-container__userContainer__userIcon">{icon}</div>
+        <div className="navigation-container__userContainer__userIcon"><img src="./profiles/profile.jpg" alt="profile" /></div>
         <div className="navigation-container__userContainer__userDetails">
             <span className="navigation-container__userContainer__userName">{userName}</span>
             <span className="navigation-container__userContainer__userID">{userID}</span>

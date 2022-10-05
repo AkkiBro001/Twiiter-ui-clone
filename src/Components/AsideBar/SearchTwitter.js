@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-import { CgKey } from 'react-icons/cg'
 import {FiSearch} from 'react-icons/fi'
 import {RiCloseCircleFill} from 'react-icons/ri'
 const SearchTwitter = () => {

@@ -116,7 +116,52 @@ const TwitterData = [{
 		"tweetRetweet": 11,
 		"tweetLike": 210,
 		"isVerified": false
+},
+{
+	"id":10,
+	"tweetAccountName": "JavaScript",
+	"tweetAccountUserID": "@javascript",
+	"tweetCreated": "7h",
+	"tweetDetails": "Destructuring is powerful and this makes that clear! A beautiful gradient to boot 🙂",
+	"tweetImageURL": "./images/Array-Destructuring.jpg",
+	"tweetProfileImageURL": "./profiles/JavaScript.jpg",
+	"tweetComment": 6,
+	"tweetRetweet": 31,
+	"tweetLike": 223,
+	"isVerified": true
 }
 ]
 
+const FollowData = [
+	{
+		"id":1,
+		"tweetAccountName":"AWS Cloud India",
+		"tweetAccountUserID":"@AWSCloudIndia",
+		"tweetProfileImageURL": "./profiles/aws.jpg",
+		"isVerified": true
+	},
+	{
+		"id":2,
+		"tweetAccountName":"Codecademy",
+		"tweetAccountUserID":"@Codecademy",
+		"tweetProfileImageURL": "./profiles/Codecademy.jpg",
+		"isVerified": true
+	},
+	{
+		"id":3,
+		"tweetAccountName":"Google Developers",
+		"tweetAccountUserID":"@googledevs",
+		"tweetProfileImageURL": "./profiles/googledevs.jpg",
+		"isVerified": true
+	},
+	{
+		"id":4,
+		"tweetAccountName":"Node.js",
+		"tweetAccountUserID":"@nodejs",
+		"tweetProfileImageURL": "./profiles/nodejs.jpg",
+		"isVerified": true
+	}
+]
+
 export default TwitterData;
+export {FollowData}
