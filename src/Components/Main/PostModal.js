@@ -9,7 +9,7 @@ import {MdOutlineAlternateEmail} from 'react-icons/md';
 const PostModal = ({ header, items, headerSub, handleToggle, type}) => {
 
     
-
+    
     return (
         <div className='Post__Modal modal-box-shadow'>
 

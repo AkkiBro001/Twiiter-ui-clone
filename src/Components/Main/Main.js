@@ -4,15 +4,13 @@ import NavHome from "./NavHome";
 import PostContainer from "./PostContainer";
 
 const Main = () => {
+  
   return (
     <div className="main-container">
         <NavHome/>
         <PostContainer/>
         <TweetContainer/>
-        <TweetContainer/>
-        <TweetContainer/>
-        <TweetContainer/>
-        <TweetContainer/>
+        
     </div>
   )
 }

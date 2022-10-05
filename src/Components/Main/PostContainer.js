@@ -3,6 +3,7 @@ import Liz from '../../img/Ukrain-War.jpg';
 import PostSection from './PostSection';
 
 const PostContainer = () => {
+  
   return (
     <>
     <div className="tweet-container post" style={{cursor:'default'}}>

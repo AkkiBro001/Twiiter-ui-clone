@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import {NavHomeIcon} from '../Icons/Icons'
 import NavHomeModal from './NavHomeModal'
 const NavHome = () => {
-
+  
   const [openModal, setModal] = useState(false)
 
   function handleModal(e){

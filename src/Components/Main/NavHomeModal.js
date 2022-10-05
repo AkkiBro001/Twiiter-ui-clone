@@ -2,6 +2,7 @@ import { NavModalIcon } from "../Icons/Icons"
 import {TbArrowsLeftRight} from "react-icons/tb";
 import {AiOutlineSetting} from "react-icons/ai"
 const NavHomeModal = () => {
+    
   return (
     <div className="NavHome__Modal modal-box-shadow">
         <header>

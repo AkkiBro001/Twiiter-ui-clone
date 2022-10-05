@@ -5,7 +5,7 @@ import {FiFlag} from 'react-icons/fi'
 import { useLayoutEffect, useRef, useState } from 'react';
 
 const TweetMoreOption = ({isToggle}) => {
- 
+    
    const [positionModal, setPositionModal] = useState({top:'0', right:'-10px'})
 
    let toggleModal = useRef()

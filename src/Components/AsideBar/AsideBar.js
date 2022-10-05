@@ -6,6 +6,7 @@ import Footer from './Footer';
 import WhatHappning from './WhatHappning';
 
 const AsideBar = () => {
+  
   return (
     <div className="aside-container">
         <SearchTwitter/>
