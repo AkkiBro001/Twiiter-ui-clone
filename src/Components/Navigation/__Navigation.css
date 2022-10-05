@@ -272,3 +272,52 @@
         border-radius: 15px;
     }
 }
+
+@media screen and (max-width:500px) {
+    html{
+        font-size: 14px;
+    }
+    main{
+        position: relative;
+        overflow: scroll;
+    }
+
+    .navigation-container{
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 6000;
+        padding: 0;
+        
+    }
+
+    .NavHome{
+        position: fixed !important;
+    }
+
+    .navigation-container__menu{
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+        background: #000;
+        width: 100vw;
+        left: 0;
+        height: 60px;
+        justify-content: space-around;
+    }
+
+    .main-container{
+        margin-left: 0 !important;
+        margin-top: 50px;
+    }
+
+    .nav-logo, .nav-Explore, .nav-Profile, .nav-More, .navigation-container__userMain, .nav-Bookmarks, .nav-Lists{
+        display: none;
+    }
+
+    .navigation-container__menu__btn{
+        position: fixed;
+        right: 15px;
+        bottom: 75px;
+    }
+}

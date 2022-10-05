@@ -1,4 +1,4 @@
-import React from 'react'
+//import React, { useEffect, useState } from 'react'
 import NavigationMenu from './NavigationMenu'
 import Button from './Button';
 import './__Navigation.css';
@@ -13,7 +13,16 @@ import {CgMoreO} from 'react-icons/cg'
 import UserNav from './UserNav';
 
 const Navigation = () => {
-  
+  // const [innerHeight, setInnerHeight] = useState(window.innerHeight)
+
+  // function handleHeight () {
+
+  // }
+
+  // useEffect(()=>{
+  //   window.addEventListener('resize', handleHeight)
+  //   return () => window.removeEventListener('resize', handleHeight)
+  // }, [])
 
   return (
     <div className='navigation-container'>
