@@ -1,4 +1,3 @@
-//import React, { useEffect, useState } from 'react'
 import NavigationMenu from './NavigationMenu'
 import Button from './Button';
 import './__Navigation.css';
@@ -10,19 +9,11 @@ import {RiFileList2Line, RiHome7Fill} from 'react-icons/ri'
 import {BsBookmarks} from 'react-icons/bs'
 import {HiOutlineUser, HiUser} from 'react-icons/hi'
 import {CgMoreO} from 'react-icons/cg'
+import {FiSearch} from 'react-icons/fi'
 import UserNav from './UserNav';
 
 const Navigation = () => {
-  // const [innerHeight, setInnerHeight] = useState(window.innerHeight)
-
-  // function handleHeight () {
-
-  // }
-
-  // useEffect(()=>{
-  //   window.addEventListener('resize', handleHeight)
-  //   return () => window.removeEventListener('resize', handleHeight)
-  // }, [])
+  
 
   return (
     <div className='navigation-container'>
@@ -31,6 +22,7 @@ const Navigation = () => {
             <NavigationMenu icon={<RiHome7Fill/>} text={"Home"} clsName={"Home"}/>
             <NavigationMenu icon={<BiHash/>} text={"Explore"} clsName={"Explore"}/>
             <NavigationMenu icon={<IoNotificationsOutline/>} text={"Notifications"} clsName={"Notifications"}/>
+            <NavigationMenu icon={<FiSearch/>} text={"Search"} clsName={"Search"}/>
             <NavigationMenu icon={<AiOutlineMail/>} text={"Messages"} clsName={"Messages"}/>
             <NavigationMenu icon={<BsBookmarks/>} text={"Bookmarks"} clsName={"Bookmarks"}/>
             <NavigationMenu icon={<RiFileList2Line/>} text={"Lists"} clsName={"Lists"}/>

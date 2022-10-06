@@ -15,6 +15,10 @@
     gap: 0.5em;
 }
 
+.navigation-container__menu .nav-Search{
+    display: none;
+}
+
 .navigation-container__menuItem__link{
     text-decoration: none;
     color: #fff;
@@ -289,6 +293,7 @@
         z-index: 6000;
         padding: 0;
         
+        
     }
 
     .NavHome{
@@ -306,9 +311,12 @@
         justify-content: space-around;
     }
 
+    
+
     .main-container{
         margin-left: 0 !important;
         margin-top: 50px;
+        padding-bottom: 50px;
     }
 
     .nav-logo, .nav-Explore, .nav-Profile, .nav-More, .navigation-container__userMain, .nav-Bookmarks, .nav-Lists{
@@ -319,5 +327,9 @@
         position: fixed;
         right: 15px;
         bottom: 75px;
+    }
+
+    .navigation-container__menu .nav-Search{
+        display: block;
     }
 }
