@@ -14,7 +14,7 @@ const WhatHappning = () => {
       const randomData = []
       for(let i=0;i<LIST_LENGTH; i++){
         const randomIndex = Math.floor(Math.random() * TwitterData.length)
-        console.log(randomIndex, !SKIP_LIST.includes(randomIndex))
+       
         if(!SKIP_LIST.includes(TwitterData[randomIndex].id)){
           randomData.push(TwitterData[randomIndex])
         }else{
@@ -26,7 +26,6 @@ const WhatHappning = () => {
     })
   },[])
 
-  console.log(data)
 
   return (
     <div className="WhatHappning-container">

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import {MdMoreHoriz, MdCheck} from 'react-icons/md';
+import profile from "../../profiles/profile.jpg";
 
 const UserNav = ({userName, userID, clsName}) => {
   
@@ -29,7 +30,7 @@ const UserNav = ({userName, userID, clsName}) => {
   function UserProfile({clsName, moreIcon}){
 return (
       <a href='#' className={`navigation-container__userContainer ${clsName} ${!openModal ? 'navlink--hover' : null} `} ref={userProfile}>
-        <div className="navigation-container__userContainer__userIcon"><img src="./profiles/profile.jpg" alt="profile" /></div>
+        <div className="navigation-container__userContainer__userIcon"><img src={profile} alt="profile" /></div>
         <div className="navigation-container__userContainer__userDetails">
             <span className="navigation-container__userContainer__userName">{userName}</span>
             <span className="navigation-container__userContainer__userID">{userID}</span>

@@ -1,5 +1,6 @@
 import React from 'react'
 import PostSection from './PostSection';
+import profile from "../../profiles/profile.jpg"
 
 const PostContainer = () => {
   
@@ -7,7 +8,7 @@ const PostContainer = () => {
     <>
     <div className="tweet-container post" style={{cursor:'default'}}>
         <div className="tweet-container__profile">
-            <img src="./profiles/profile.jpg" alt="profile" />
+            <img src={profile} alt="profile" />
         </div>
         <div className="tweet-container__details">
         <PostSection/>
