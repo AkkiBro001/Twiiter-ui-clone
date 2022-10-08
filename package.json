@@ -1,6 +1,6 @@
 {
-  "name": "twitter-ui-clone",
-  "homepage": "https://AkkiBro001.github.io/Twiiter-ui-clone",
+  "name": "react-twitter-ui-clone",
+  "homepage": "https://akkibro001.github.io/react-twitter-ui-clone/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
