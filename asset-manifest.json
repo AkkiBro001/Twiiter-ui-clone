@@ -1,13 +1,27 @@
 {
   "files": {
     "main.css": "/react-twitter-ui-clone/static/css/main.4377b460.css",
-    "main.js": "/react-twitter-ui-clone/static/js/main.731e5a45.js",
+    "main.js": "/react-twitter-ui-clone/static/js/main.4a8ee51e.js",
+    "static/media/nodejs-freecode.jpg": "/react-twitter-ui-clone/static/media/nodejs-freecode.949d998e565487f07339.jpg",
+    "static/media/profile.jpg": "/react-twitter-ui-clone/static/media/profile.0885089e6eba35cee67f.jpg",
+    "static/media/Array-Destructuring.jpg": "/react-twitter-ui-clone/static/media/Array-Destructuring.7780caf02bf977e2f727.jpg",
+    "static/media/django-wesite.jpg": "/react-twitter-ui-clone/static/media/django-wesite.9b4fa0018bf3da3a2196.jpg",
+    "static/media/portFolio-website.jpg": "/react-twitter-ui-clone/static/media/portFolio-website.c5e17c9b5e800ff73574.jpg",
+    "static/media/TS-plain.jpg": "/react-twitter-ui-clone/static/media/TS-plain.330e9f5f0ee227674055.jpg",
+    "static/media/ReactJS.jpg": "/react-twitter-ui-clone/static/media/ReactJS.584d472f88f1ef5b84f4.jpg",
+    "static/media/aws.jpg": "/react-twitter-ui-clone/static/media/aws.3054ed8f09ce56e6b3bb.jpg",
+    "static/media/freecodecamp.jpg": "/react-twitter-ui-clone/static/media/freecodecamp.f0c2e8d1ebcd2512ffb4.jpg",
+    "static/media/JavaScript.jpg": "/react-twitter-ui-clone/static/media/JavaScript.20b38614e186abafc92a.jpg",
+    "static/media/googledevs.jpg": "/react-twitter-ui-clone/static/media/googledevs.55a4660f7c65ca2cc170.jpg",
+    "static/media/TypeScript.jpg": "/react-twitter-ui-clone/static/media/TypeScript.bebc44b3cc4ab8d40c4d.jpg",
+    "static/media/nodejs.jpg": "/react-twitter-ui-clone/static/media/nodejs.2cb0a1daf6aebaff037c.jpg",
+    "static/media/Codecademy.jpg": "/react-twitter-ui-clone/static/media/Codecademy.6a92f53d162105bbc469.jpg",
     "index.html": "/react-twitter-ui-clone/index.html",
     "main.4377b460.css.map": "/react-twitter-ui-clone/static/css/main.4377b460.css.map",
-    "main.731e5a45.js.map": "/react-twitter-ui-clone/static/js/main.731e5a45.js.map"
+    "main.4a8ee51e.js.map": "/react-twitter-ui-clone/static/js/main.4a8ee51e.js.map"
   },
   "entrypoints": [
     "static/css/main.4377b460.css",
-    "static/js/main.731e5a45.js"
+    "static/js/main.4a8ee51e.js"
   ]
 }
